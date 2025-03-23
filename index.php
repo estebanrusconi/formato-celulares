@@ -2,7 +2,7 @@
 
     /* ESPERO PARAMETRO POR GET "c" y ELIMINO TODOS LOS CARACTERES COMUNES QUE PUEDE LLEGAR A TENER UN CELULAR */
 
-    $reemplazoCaracter = array(" " => "", "+" => "", "-" => "", "(" => "", ")" => "");
+    $reemplazoCaracter = array(" " => "", "+" => "", "-" => "", "(" => "", ")" => "", "<" => "", ">" => "", "/" => "", "_" => "");
     $c = strtr($_GET["c"], $reemplazoCaracter);
 
     /* CHEQUEO SI VIENE CON EL CODIGO DE PAIS Y EL 9 */
@@ -13,7 +13,7 @@
             $c = substr($c, 3);
             break;
 
-        case substr($c,0,2) == "54" && substr($c,3,3) != "9":
+        default :
             $c = substr($c,2);
             break;
 
